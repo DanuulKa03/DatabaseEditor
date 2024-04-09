@@ -3,6 +3,8 @@ import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.3
 
+import "qrc:/qml/DataBaseUser.qml"
+
 Window {
     width: 1600
     height: 900
@@ -18,7 +20,7 @@ Window {
 
         height: 25
 
-        color: "red"
+        color: "#bbbcb8"
 
         Label {
             anchors.centerIn: parent
@@ -54,7 +56,7 @@ Window {
             top: buttonRow.bottom
             left: parent.left
             right: parent.right
-            margins: 5
+            leftMargin: parent.width * 0.005
         }
 
         text: "Пользователи"
@@ -66,7 +68,7 @@ Window {
         anchors {
             top: labelUser.bottom
             left: parent.left
-            bottom: statusDataBase.top
+            bottom: statusDataBar.top
             bottomMargin: parent.height * 0.015
             leftMargin: parent.width * 0.005
         }
@@ -89,69 +91,72 @@ Window {
         }
     }
 
-    Image {
-        id: photoPreview
+    RowLayout {
+        id: rowPhotoAndFullName
+
+        spacing: width - (photoPreview.width + gridFullName.width + parent.width * 0.05)
 
         anchors {
             top: labelUser.bottom
             left: scrollViewUser.right
-            leftMargin: 25
-        }
-
-        width: 250
-        height: 300
-
-        Layout.fillWidth: true
-
-        source: "qrc:/photoUser/etc/93ed3af6411e1e8b997038c74c287a8a.jpg"
-    }
-
-
-    Grid {
-        anchors {
-            top: labelUser.bottom
             right: parent.right
-            margins: 15
         }
 
-        columns: 2
-        spacing: 25
-        columnSpacing: 50
-        verticalItemAlignment: Grid.AlignVCenter // Центрирование элементов по вертикали
-        Label {
-            text: "Фамилия"
+        Image {
+            id: photoPreview
+
+            Layout.leftMargin: 15
+
+            source: "qrc:/photoUser/etc/93ed3af6411e1e8b997038c74c287a8a.jpg"
         }
-        TextField {
-            width: parent.parent.width * 0.25
-            placeholderText: qsTr("Введите фамилию")
-        }
-        Label {
-            anchors.rightMargin: 150
-            text: "Имя"
-        }
-        TextField {
-            width: parent.parent.width * 0.25
-            placeholderText: qsTr("Введите имя")
-        }
-        Label {
-            text: "Отчество"
-        }
-        TextField {
-            width: parent.parent.width * 0.25
-            placeholderText: qsTr("Введите отчество")
+
+
+        Grid {
+            id: gridFullName
+            
+            columns: 2
+            spacing: 25
+            columnSpacing: 50
+            
+            verticalItemAlignment: Grid.AlignVCenter // Центрирование элементов по вертикали
+            Label {
+                text: "Фамилия"
+            }
+            TextField {
+                width: parent.parent.width * 0.25
+                placeholderText: qsTr("Введите фамилию")
+            }
+            Label {
+                anchors.rightMargin: 150
+                text: "Имя"
+            }
+            TextField {
+                width: parent.parent.width * 0.25
+                placeholderText: qsTr("Введите имя")
+            }
+            Label {
+                text: "Отчество"
+            }
+            TextField {
+                width: parent.parent.width * 0.25
+                placeholderText: qsTr("Введите отчество")
+            }
         }
     }
+
     GridLayout {
         id: grid
+
         anchors {
+            top: rowPhotoAndFullName.bottom
+            left: scrollViewUser.right
             right: parent.right
-            bottom: statusDataBase.top
-            rightMargin: parent.width * 0.05
-            bottomMargin: parent.height * 0.10
+            bottom: scrollViewUser.bottom
+            leftMargin: 15
+            rightMargin: 15
         }
 
         columns: 2
-        columnSpacing: parent.width * 0.25
         rows: 6
 
         property var fieldNames: ["first_name", "last_name", "email", "phone_number", "date_of_birth", "password", "avatar",
@@ -168,7 +173,7 @@ Window {
     }
 
     Rectangle {
-        id: statusDataBase
+        id: statusDataBar
 
         anchors {
             left: parent.left
@@ -178,13 +183,7 @@ Window {
 
         height: 25
 
-        color: "red"
-
-        Label {
-            anchors.centerIn: parent
-
-            text: "Введение данных пользователей"
-        }
+        color: "#bbbcb8"
     }
 
 }

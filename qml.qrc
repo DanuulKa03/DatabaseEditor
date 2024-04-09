@@ -1,9 +1,12 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>DataBaseUser.qml</file>
     </qresource>
     <qresource prefix="/photoUser">
         <file>etc/93ed3af6411e1e8b997038c74c287a8a.jpg</file>
+    </qresource>
+    <qresource prefix="/qml">
+        <file>qml/DataBaseUser.qml</file>
+        <file>qml/ConnectionDialog.qml</file>
     </qresource>
 </RCC>
