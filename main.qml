@@ -20,7 +20,7 @@ Window {
 
         height: 25
 
-        color: "#bbbcb8"
+        color: Components.Colors.topAndBottomPanelMainColor
 
         Label {
             anchors.centerIn: parent
@@ -78,7 +78,7 @@ Window {
         ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
 
         background: Rectangle {
-            color: "red"
+            color: Components.Colors.leftPanelMainColor
         }
 
         ListView {
@@ -94,7 +94,7 @@ Window {
     RowLayout {
         id: rowPhotoAndFullName
 
-        spacing: width - (photoPreview.width + gridFullName.width + parent.width * 0.05)
+        spacing: 1000
 
         anchors {
             top: labelUser.bottom
@@ -183,7 +183,7 @@ Window {
 
         height: 25
 
-        color: "#bbbcb8"
+        color: Components.Colors.topAndBottomPanelMainColor
     }
 
 }
