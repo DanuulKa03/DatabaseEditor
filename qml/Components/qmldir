@@ -2,3 +2,5 @@ module Components
 
 ConnectionDialog 1.0 ConnectionDialog.qml
 DataBaseUser 1.0 DataBaseUser.qml
+singleton Colors 1.0 Colors.qml
+LebInput 1.0 LebInput.qml
