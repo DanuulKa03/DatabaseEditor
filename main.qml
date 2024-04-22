@@ -3,7 +3,7 @@ import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.3
 
-import "qrc:/qml/DataBaseUser.qml"
+import Components 1.0 as Components
 
 Window {
     width: 1600
@@ -78,14 +78,14 @@ Window {
         ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
 
         background: Rectangle {
-            color: "#eeeeee"
+            color: "red"
         }
 
         ListView {
 
             clip: true // Обрезать содержимое, которое выходит за пределы ListView
             model: 25
-            delegate: DataBaseUser {
+            delegate: Components.DataBaseUser {
                 width: scrollViewUser.width
             }
         }
@@ -107,17 +107,17 @@ Window {
 
             Layout.leftMargin: 15
 
-            source: "qrc:/photoUser/etc/93ed3af6411e1e8b997038c74c287a8a.jpg"
+            source: "qrc:/photoUser/res/93ed3af6411e1e8b997038c74c287a8a.jpg"
         }
 
 
         Grid {
             id: gridFullName
-            
+
             columns: 2
             spacing: 25
             columnSpacing: 50
-            
+
             verticalItemAlignment: Grid.AlignVCenter // Центрирование элементов по вертикали
             Label {
                 text: "Фамилия"
@@ -160,7 +160,7 @@ Window {
         rows: 6
 
         property var fieldNames: ["first_name", "last_name", "email", "phone_number", "date_of_birth", "password", "avatar",
-        "is_active", "is_superuser", "addres", "city", "job_title"]
+            "is_active", "is_superuser", "addres", "city", "job_title"]
 
         Repeater {
             model: 12 // Количество текстовых полей

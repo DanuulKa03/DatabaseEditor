@@ -1,0 +1,4 @@
+module Components
+
+ConnectionDialog 1.0 ConnectionDialog.qml
+DataBaseUser 1.0 DataBaseUser.qml
