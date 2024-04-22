@@ -5,6 +5,7 @@
         <file>qml/Components/DataBaseUser.qml</file>
         <file>qml/Components/qmldir</file>
         <file>qml/Components/Colors.qml</file>
+        <file>qml/Components/LebInput.qml</file>
     </qresource>
     <qresource prefix="/photoUser">
         <file>res/93ed3af6411e1e8b997038c74c287a8a.jpg</file>
