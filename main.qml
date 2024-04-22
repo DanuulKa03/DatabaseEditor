@@ -111,35 +111,20 @@ Window {
         }
 
 
-        Grid {
-            id: gridFullName
+        Column {
+            spacing: 10
 
-            columns: 2
-            spacing: 25
-            columnSpacing: 50
-
-            verticalItemAlignment: Grid.AlignVCenter // Центрирование элементов по вертикали
-            Label {
-                text: "Фамилия"
+            Components.LebInput {
+                labelText: "Фамилия"
+                placeholder: qsTr("Введите фамилию")
             }
-            TextField {
-                width: parent.parent.width * 0.25
-                placeholderText: qsTr("Введите фамилию")
+            Components.LebInput {
+                labelText: "Имя"
+                placeholder: qsTr("Введите имя")
             }
-            Label {
-                anchors.rightMargin: 150
-                text: "Имя"
-            }
-            TextField {
-                width: parent.parent.width * 0.25
-                placeholderText: qsTr("Введите имя")
-            }
-            Label {
-                text: "Отчество"
-            }
-            TextField {
-                width: parent.parent.width * 0.25
-                placeholderText: qsTr("Введите отчество")
+            Components.LebInput {
+                labelText: "Отчество"
+                placeholder: qsTr("Введите отчество")
             }
         }
     }
